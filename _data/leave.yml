@@ -1,4 +1,11 @@
 # sample data for merging countries
 
-- country: Hungary
+- country: Brazil
   leave: 160
+
+- country: Ethiopia
+  leave: 100
+  
+- country: Kenya
+  leave: 50
+  
