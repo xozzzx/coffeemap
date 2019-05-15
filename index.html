@@ -64,6 +64,11 @@
   <script>
   L.mapbox.accessToken = '{{site.accesstoken}}';
   var map = L.mapbox.map('map', 'katydecorah.098626bb').setView([45.71,-33.57], 2);
+   
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + {{site.accesstoken}}, {
+    id: 'mapbox.light',
+    attribution: ...
+}).addTo(map);  
 
   map.scrollWheelZoom.disable();
 
