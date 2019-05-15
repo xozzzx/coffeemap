@@ -62,23 +62,17 @@
 
 
   <script>
-  L.mapbox.accessToken = '{{site.accesstoken}}';
-  var map = L.mapbox.map('map', 'katydecorah.098626bb').setView([45.71,-33.57], 2);
-   
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2hvaXNnIiwiYSI6ImNqdm91cjQxYjF3MDk0M3FtYnN6NXVqMmEifQ.dKT8I1DTYhR-BsVQ2z0DnA', {
+
+    
+var mapboxAccessToken = {pk.eyJ1Ijoid2hvaXNnIiwiYSI6ImNqdm91cjQxYjF3MDk0M3FtYnN6NXVqMmEifQ.dKT8I1DTYhR-BsVQ2z0DnA};
+var map = L.map('map').setView([45.71,-33.57], 2);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=' + mapboxAccessToken, {
     id: 'mapbox.light',
     attribution: ...
-}).addTo(map);  
+}).addTo(map);
 
-  map.scrollWheelZoom.disable();
-
-  var markers = L.mapbox.featureLayer().addTo(map);
-
-  markers.setGeoJSON(countryData);
-
-  //map.fitBounds(markers.getBounds());
-
-  map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+L.geoJson(countryData).addTo(map);    
 
   </script>
 </body>
